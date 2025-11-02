@@ -157,6 +157,10 @@ if (contactForm) {
         
         setTimeout(() => {
             alert('Terima kasih! Pesan Anda telah dikirim. Saya akan menghubungi Anda segera.');
+            
+            // Log data to console for debugging
+            console.log('Form submitted:', { name, email, subject, message });
+            
             contactForm.reset();
             submitBtn.textContent = originalText;
             submitBtn.disabled = false;
