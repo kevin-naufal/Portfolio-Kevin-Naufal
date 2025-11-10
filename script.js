@@ -60,6 +60,17 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+document.addEventListener("DOMContentLoaded", function() {
+    const seeMoreBtn = document.getElementById("seeMoreBtn");
+    const hiddenProjects = document.querySelectorAll(".project-card.hidden");
+
+    seeMoreBtn.addEventListener("click", () => {
+        hiddenProjects.forEach(card => card.classList.remove("hidden"));
+        seeMoreBtn.style.display = "none"; // Hide button after revealing projects
+    });
+});
+
+
 // Typing animation for hero title
 function typeWriter(element, text, speed = 100) {
     let i = 0;
@@ -189,26 +200,34 @@ document.querySelectorAll('.skill-item').forEach(item => {
     });
 });
 
-// Project cards tilt effect
+// Project cards tilt effect — use CSS variables so we don't overwrite hover translateY
 document.querySelectorAll('.project-card').forEach(card => {
     card.addEventListener('mousemove', (e) => {
         const rect = card.getBoundingClientRect();
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;
-        
+
         const centerX = rect.width / 2;
         const centerY = rect.height / 2;
-        
+
         const rotateX = (y - centerY) / 10;
         const rotateY = (centerX - x) / 10;
-        
-        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(10px)`;
+
+        // set CSS variables for rotation and slight pop (translateZ)
+        card.style.setProperty('--rx', `${rotateX}deg`);
+        card.style.setProperty('--ry', `${rotateY}deg`);
+        card.style.setProperty('--tz', `10px`);
     });
-    
+
     card.addEventListener('mouseleave', () => {
-        card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateZ(0)';
+        // reset CSS variables
+        card.style.setProperty('--rx', `0deg`);
+        card.style.setProperty('--ry', `0deg`);
+        card.style.setProperty('--tz', `0px`);
     });
 });
+// Project card hover: we only want a lift effect (no tilt).
+// The CSS handles the lift via the --ty variable on :hover. No JS needed here.
 
 // Loading animation
 window.addEventListener('load', () => {

@@ -199,15 +199,17 @@
                 <h2>Proyek Terbaru</h2>
                 <p>Beberapa proyek yang telah saya kerjakan</p>
             </div>
-            <div class="projects-grid">
-                <div class="project-card">
+
+            <div class="projects-grid" id="projectsGrid">
+                <!-- === Existing 3 Projects === -->
+                <div class="project-card hidden">
                     <div class="project-image">
                         <i class="fas fa-futbol"></i>
                     </div>
                     <div class="project-content">
                         <h3>ScoreStatsFC</h3>
                         <p>Platform terlengkap untuk data sepak bola Eropa dengan analisis real-time, 
-                           live score, statistik pemain, dan informasi transfer terkini.</p>
+                        live score, statistik pemain, dan informasi transfer terkini.</p>
                         <div class="project-tech">
                             <span class="tech-tag">HTML5</span>
                             <span class="tech-tag">CSS3</span>
@@ -219,14 +221,15 @@
                         </div>
                     </div>
                 </div>
-                <div class="project-card">
+
+                <div class="project-card hidden">
                     <div class="project-image">
                         <i class="fas fa-leaf"></i>
                     </div>
                     <div class="project-content">
                         <h3>EcoConstruct</h3>
                         <p>Marketplace bahan bangunan ramah lingkungan dengan sistem rating terpercaya, 
-                           jaminan kualitas, dan program loyalitas untuk konstruksi berkelanjutan.</p>
+                        jaminan kualitas, dan program loyalitas untuk konstruksi berkelanjutan.</p>
                         <div class="project-tech">
                             <span class="tech-tag">HTML5</span>
                             <span class="tech-tag">CSS3</span>
@@ -238,6 +241,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="project-card">
                     <div class="project-image">
                         <i class="fas fa-chart-line"></i>
@@ -245,21 +249,64 @@
                     <div class="project-content">
                         <h3>Football Data Science</h3>
                         <p>Analisis statistik pemain sepak bola menggunakan dataset FIFA 22. 
-                           Top 10 pemain passing, potential, dan analisis defender muda.</p>
+                        Top 10 pemain passing, potential, dan analisis defender muda.</p>
                         <div class="project-tech">
                             <span class="tech-tag">Python</span>
                             <span class="tech-tag">Pandas</span>
                             <span class="tech-tag">Matplotlib</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://github.com/kevin-naufal/Football-Data-Science" target="_blank" class="btn btn-small">View</a>
                             <a href="https://github.com/kevin-naufal/Football-Data-Science" target="_blank" class="btn btn-small btn-outline">GitHub</a>
                         </div>
                     </div>
                 </div>
+
+                <!-- === Hidden Dummy Projects === -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-music"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Strudel Projects</h3>
+                        <p>Collection of short Strudel live-coding sketches (melodies, rhythm experiments, and sound design). Copy code into the Strudel editor to run the sketches.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Web Audio</span>
+                            <span class="tech-tag">Strudel</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://strudel.cc/" target="_blank" class="btn btn-small">Run in Strudel</a>
+                            <a href="https://github.com/kevin-naufal/strudel-project" target="_blank" class="btn btn-small btn-outline">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-hand-paper"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Hand Gesture Calculator</h3>
+                        <p>Gesture-controlled calculator using MediaPipe and OpenCV. Detects hand gestures from webcam to build and evaluate expressions in real-time.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">OpenCV</span>
+                            <span class="tech-tag">MediaPipe</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/kevin-naufal/hand-gesture-calculator" target="_blank" class="btn btn-small btn-outline">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- See More Button -->
+            <div class="see-more">
+                <button id="seeMoreBtn" class="btn btn-primary">Lihat Lebih Banyak</button>
             </div>
         </div>
     </section>
+
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
